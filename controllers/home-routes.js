@@ -17,21 +17,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/blogpost/:id', async (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-    } else {
-      try {
-         const dbBlogpostData = await Blogpost.findByPk(req.params.id);
-         const blogpost = dbBlogpostData.get({ plain: true });
-         res.render('blogpost', { blogpost, loggedIn: req.session.loggedIn });
-      } catch (err) {
-          console.log(err);
-          res.status(500).json(err);
-      }
-    }
-})
+// add comment (post which is connected to the blogpost)
 
+// GET YOUR OWN POSTS: HERE YOU CAN ADD, UPDATE, AND DELETE YOUR OWN POSTS
 // router.get('/dashboard', async (req, res) => {
 //     if (!req.session.loggedIn) {
 //         res.redirect('/login');

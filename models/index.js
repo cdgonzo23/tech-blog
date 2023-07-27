@@ -9,4 +9,7 @@ Blogpost.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+// blogpost has many comments
+// comment belongs to comment
+
 module.exports = { User, Blogpost };
