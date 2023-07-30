@@ -1,10 +1,29 @@
-<div  class="blogpost">
-  <section class="card">
-  {{!-- make this a button to add comment --}}
-    <div  class="card-header">
-      <h4>{{title}}</h4>
-      <p>Created by {{author}} on {{format_date createdOn}}</p>
+
+<section class="card">
+  <div  class="card-header">
+    <h4>{{title}}</h4>
+    <p>Created by {{author}} on {{format_date createdOn}}</p>
+  </div>
+  <p class="description">{{description}}</p>
+
+  {{!-- {{#if comments}}
+  {{#each comments as |comment|}}
+    <div class="comment-card">
+      <p>{{comment.description}}</p>
+      <p>Created by {{comment.author}} on {{format_date comment.createdOn}}</p>
     </div>
-      <p class="description">{{description}}</p>
-  </section>
-</div>
+  {{/each}}
+  {{/if}}
+
+  <div class="add-comment">
+    <form id="comment-form">
+      <h6>Comment:</h6>
+      <textarea name="comment" id="comment"></textarea>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Comment</button>
+      </div>
+    </form>
+  </div> --}}
+</section>
+
+{{!-- <script src="/js/addComment.js"></script> --}}

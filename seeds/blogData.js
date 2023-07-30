@@ -2,7 +2,7 @@ const { Blogpost } = require('../models');
 
 const blogData = [
     {
-        title: 'Why MVC is so important',
+        title: 'Why MVC is so Important',
         author:'Xandromus',
         createdOn: 'May 8, 2023',
         description: 'MVC allows developers to maintain a true seperation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application design.',

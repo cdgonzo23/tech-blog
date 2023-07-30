@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blogpost, User } = require('../models');
+const { Blogpost, Comments, User } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -19,13 +19,22 @@ router.get('/', async (req, res) => {
 
 // add comment (post which is connected to the blogpost)
 
-// GET YOUR OWN POSTS: HERE YOU CAN ADD, UPDATE, AND DELETE YOUR OWN POSTS
 router.get('/dashboard', async (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect('/login');
       } else {
         try {
-           
+            const dbBlogpostData = await Blogpost.findAll({
+                where: { user_id: req.session.id },
+                include: [{ model: User, attributes: ["username"] }, { model: Comments }],
+            })
+            const blogposts = dbBlogpostData.map((blogpost) => 
+            blogpost.get({ plain: true})
+        );
+        res.render('dashboard', {
+            blogposts,
+            loggedIn: req.session.loggedIn,
+        });
         } catch (err) {
             console.log(err);
             res.status(500).json(err);

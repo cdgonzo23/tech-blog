@@ -1,1 +1,14 @@
-
+<div>
+    <h3>Your Dashboard:</h3>
+</div>
+{{#each blogpost}}
+    <a href="/userPosts/{{id}}" class="dashboard-post">
+        <h5>{{title}}</h5>
+        <p>{{format_date createdOn}}</p>
+    </a>
+{{/each}}
+<div class="new-post">
+    <a href="/api/userPosts">
+        <button class="btn btn-primary">+ New Post</button>
+    </a>
+</div>
