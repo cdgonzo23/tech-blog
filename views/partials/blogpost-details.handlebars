@@ -1,8 +1,10 @@
-<section class="card">
+<div  class="blogpost">
+  <section class="card">
   {{!-- make this a button to add comment --}}
-  <div>
-    <h4>{{title}}</h4>
-    <p>Created by {{author}} on {{format_date createdOn}}</p>
-  </div>
-    <p>{{description}}</p>
-</section>
+    <div  class="card-header">
+      <h4>{{title}}</h4>
+      <p>Created by {{author}} on {{format_date createdOn}}</p>
+    </div>
+      <p class="description">{{description}}</p>
+  </section>
+</div>

@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    background-color: #ff8800;
+    color: #060606;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 7px;
+    padding: 5px 15px 5px 15px;
+}
+
+nav {
+    display: flex;
+    min-width: 400px;
+    justify-content: space-between;
+    font-size: large;
+}
+
+.blogpost {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color: #ff8800;
+    color: #060606;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: whitesmoke;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 2px 10px;
+    color: #ff8800;
+    background-color: #060606;
+}
+
+.description {
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: medium;
+}
+
+.login-card,
+.signup-card {
+    background-color: #ff8800;
+    color: #060606;
+    padding: 10px;
+    margin: 20px;
+    border-style: solid;
+    border-color: whitesmoke;
+}
+
+.page-title {
+    align-items: center;
+    padding: 10px 10px 2px 10px;
+    color: #060606;
+}
+

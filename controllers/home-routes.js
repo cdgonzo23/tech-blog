@@ -20,18 +20,18 @@ router.get('/', async (req, res) => {
 // add comment (post which is connected to the blogpost)
 
 // GET YOUR OWN POSTS: HERE YOU CAN ADD, UPDATE, AND DELETE YOUR OWN POSTS
-// router.get('/dashboard', async (req, res) => {
-//     if (!req.session.loggedIn) {
-//         res.redirect('/login');
-//       } else {
-//         try {
+router.get('/dashboard', async (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+      } else {
+        try {
            
-//         } catch (err) {
-//             console.log(err);
-//             res.status(500).json(err);
-//         }
-//       }
-// });
+        } catch (err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+      }
+});
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
