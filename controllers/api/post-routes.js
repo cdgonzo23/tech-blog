@@ -3,40 +3,31 @@ const { Blogpost, User } = require('../../models')
 
 router.post('/', async (req, res) => {
     try {
+        console.log('SESION ID',req.session.id);
         const blogpostData = await Blogpost.create({
-            title: req.body.title,
-            description: req.body.description,
-            user_id: req.session.id,
+            ...req.body,
+            user_id: req.session.user_id,
         });
-        res.render('dashboard', { loggedIn: req.session.loggedIn });
+
+        res.status(200).json(blogpostData)
     } catch (err) {
+        console.log(err);
         res.status(500).json(err)
     }
 });
 
-router.get("/:id", async (req, res) => {
-    try {
-      const blogpostData = await Blogpost.findByPk(req.params.id, { include: [{ model: User, attributes: ["username"] }] });
-      const blogpost = blogpostData.get({ plain: true });
-      res.render("updateBlogpost", { blogpost, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json(err);
-    }
-});
+// add comment (post which is connected to the blogpost)
+
 
 router.put("/:id", async (req, res) => {
     try {
       const blogpostData = await Blogpost.update(
-        {
-            title: req.body.title,
-            description: req.body.description,
-        },
+        req.body,
         {
             where: { id: req.params.id },
         }
       );
-      res.render("dashboard", { loggedIn: req.session.loggedIn });
+      res.json(blogpostData)
     } catch (err) {
       console.error(err);
       res.status(500).json(err);

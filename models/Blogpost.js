@@ -15,25 +15,11 @@ Blogpost.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        createdOn: {
-                type: DataTypes.DATE,
-                allowNull: false,
-        },
         description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'user',
-              key: 'id',
-            },
-        },
+
     },
     {
         sequelize,
