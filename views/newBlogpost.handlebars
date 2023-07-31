@@ -1,0 +1,20 @@
+<section class="new-blogpost">
+    <form id="add-blogpost"  data-user-id="{{blogpost.user_id}}" data-post-id="{{blogpost.id}}">
+        <h3>Create a Blogpost</h3>
+        <div class="form-group">
+            <div class="new-title">
+                <label>Title: </label>
+                <input type="text" id="blogpost-title"/>
+            </div>
+            <div class="new-description">
+                <label>Description: </label>
+                <textarea id="blogpost-description"></textarea>
+            </div>
+        </div>
+        <div class="submit-blogpost">
+            <button class="btn btn-primary" type="submit">Post</button>
+        </div>
+    </form>
+</section>
+
+<script src="/js/addBlogpost.js"></script>

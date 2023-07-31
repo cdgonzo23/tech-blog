@@ -26,7 +26,6 @@ router.get('/dashboard', async (req, res) => {
         try {
             const dbBlogpostData = await Blogpost.findAll({
                 where: { user_id: req.session.id },
-                include: [{ model: User, attributes: ["username"] }, { model: Comments }],
             })
             const blogposts = dbBlogpostData.map((blogpost) => 
             blogpost.get({ plain: true})

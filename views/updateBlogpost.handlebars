@@ -1,0 +1,18 @@
+<section class="update-blogpost">
+    <form id="update-blogpost" action="submit">
+        <h5>Update a Blogpost</h5>
+        <label>Title</label>
+        <input type="text" id="update-title" value="{{blogpost.title}}"/>
+        <label>Description</label>
+        <textarea id="update-description">{{blogpost.description}}</textarea>
+        <div class="update-btn">
+            <button class="btn btn-primary">Update</button>
+        </div>
+    </form>
+    <div class="delete-blogpost">
+        <button id="delete-btn" class="btn btn-primary">Delete</button>
+    </div>
+</section>
+
+<script src="/js/updateBlogpost.js"></script>
+<script src="/js/deleteBlogpost.js"></script>
