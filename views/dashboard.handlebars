@@ -1,10 +1,10 @@
 <div>
     <h3>Your Dashboard:</h3>
 </div>
-{{#each blogpost}}
-    <a href="/api/post/{{id}}" class="dashboard-post">
+{{#each blogposts}}
+    <a href="/dashboard/{{id}}" class="dashboard-post">
         <h5>{{title}}</h5>
-        <p>{{format_date createdOn}}</p>
+        <p>{{format_date createdAt}}</p>
     </a>
 {{/each}}
 <div class="new-post">

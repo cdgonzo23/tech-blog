@@ -18,7 +18,6 @@ router.post('/', async (req, res) => {
 
 // add comment (post which is connected to the blogpost)
 
-
 router.put("/:id", async (req, res) => {
     try {
       const blogpostData = await Blogpost.update(
