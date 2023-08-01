@@ -4,17 +4,26 @@
       <p>Created by {{blogpost.user.username}} on {{format_date blogpost.createdAt}}</p>
     </div>
     <p class="description">{{blogpost.description}}</p>
-    <form id="add-comment">
-        <div class="form-group">
-            <div class="new-description">
-                <label>Add a Comment: </label>
-                <textarea id="comment-description"></textarea>
-            </div>
-        </div>
-        <div class="submit-comment">
-            <button class="btn btn-primary" type="submit">Comment</button>
-        </div>
-    </form>
 </section>
+
+
+{{#each comments as |comment|}}
+<div class="comment-card">
+    <p>{{comment.description}}</p>
+    <p>Created by {{comment.user.username}} on {{format_date comment.createdAt}}</p>
+</div>
+{{/each}}
+
+<form id="add-comment" post-id="{{blogpost.id}}" action="submit">
+    <div class="form-group">
+        <div class="new-comment">
+            <label>Add a Comment: </label>
+            <textarea id="comment-description"></textarea>
+        </div>
+    </div>
+    <div class="submit-comment">
+        <button class="btn btn-primary" type="submit">Comment</button>
+    </div>
+</form>
 
 <script src="/js/addComment.js"></script>

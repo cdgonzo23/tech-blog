@@ -23,13 +23,17 @@ router.get('/', async (req, res) => {
 });
 
 // GET FOR EACH POST TO ADD COMMENT AND SEE DESCRIPTION
-router.get("/post/:id", async (req, res) => {
+router.get("/blogpost/:id", async (req, res) => {
     try {
       const blogpostData = await Blogpost.findByPk(req.params.id, { include: [User] });
+      const commentData = await Comments.findAll({ where: { id: req.params.id }, include: [User]});
 
       const blogpost = blogpostData.get({ plain: true});
+      const comments = commentData.map((comment) => comment.get({ plain: true }));
+
       res.render("addComment", { 
-        blogpost, 
+        blogpost,
+        comments,
         loggedIn: req.session.loggedIn,
     });
     } catch (err) {
