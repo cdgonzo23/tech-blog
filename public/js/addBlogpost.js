@@ -13,7 +13,6 @@ const newPostFormHandler = async (event) => {
           headers: { "Content-Type": "application/json" },
         });
         if (response.ok) {
-          alert('Post Created!')
           document.location.replace('/dashboard')    
         }
   } else {

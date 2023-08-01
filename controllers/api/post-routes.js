@@ -3,7 +3,6 @@ const { Blogpost, User } = require('../../models')
 
 router.post('/', async (req, res) => {
     try {
-        console.log('SESION ID',req.session.id);
         const blogpostData = await Blogpost.create({
             ...req.body,
             user_id: req.session.user_id,

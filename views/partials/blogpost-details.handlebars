@@ -1,11 +1,11 @@
 
 <section class="card">
-  <div  class="card-header">
-    <h4>{{title}}</h4>
-    <p>Created by {{user.username}} on {{format_date createdAt}}</p>
-  </div>
-  <p class="description">{{description}}</p>
 
+  <div  class="card-header">
+    <a href="/post/{{id}}" style="color: #ff8800"><h4>{{title}}</h4></a>
+      <p>Created by {{user.username}} on {{format_date createdAt}}</p>
+    </div>
+  
   {{!-- {{#if comments}}
   {{#each comments as |comment|}}
     <div class="comment-card">

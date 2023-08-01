@@ -23,16 +23,20 @@ router.get('/', async (req, res) => {
 });
 
 // GET FOR EACH POST TO ADD COMMENT AND SEE DESCRIPTION
-// router.get("/:id", async (req, res) => {
-//     try {
-//       const blogpostData = await Blogpost.findByPk(req.params.id, { include: [{ model: User, attributes: ["username"] }] });
-//       const blogpost = blogpostData.get({ plain: true });
-//       res.render("updateBlogpost", { blogpost, loggedIn: req.session.loggedIn });
-//     } catch (err) {
-//       console.error(err);
-//       res.status(500).json(err);
-//     }
-// });
+router.get("/post/:id", async (req, res) => {
+    try {
+      const blogpostData = await Blogpost.findByPk(req.params.id, { include: [User] });
+
+      const blogpost = blogpostData.get({ plain: true});
+      res.render("addComment", { 
+        blogpost, 
+        loggedIn: req.session.loggedIn,
+    });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+});
 
 
 router.get('/dashboard', async (req, res) => {
