@@ -1,29 +1,33 @@
-<section class="card">
-    <div  class="card-header">
-      <h4>{{blogpost.title}}</h4>
-      <p>Created by {{blogpost.user.username}} on {{format_date blogpost.createdAt}}</p>
-    </div>
-    <p class="description">{{blogpost.description}}</p>
-</section>
+<div class="blogpost">
+    <section class="card">
+        <div  class="card-header">
+          <h4>{{blogpost.title}}</h4>
+          <p>Created by {{blogpost.user.username}} on {{format_date blogpost.createdAt}}</p>
+        </div>
+        <p class="description">{{blogpost.description}}</p>
+    </section>
 
+    {{#each comments as |comment|}}
+    <section class="card" style="padding: 10px 0px 0px 10px">
+        <div class="comment-card">
+            <p>{{comment.description}}</p>
+            <p>Created by {{comment.user.username}} on {{format_date comment.createdAt}}</p>
+        </div>
+    </section>
+    {{/each}}
 
-{{#each comments as |comment|}}
-<div class="comment-card">
-    <p>{{comment.description}}</p>
-    <p>Created by {{comment.user.username}} on {{format_date comment.createdAt}}</p>
-</div>
-{{/each}}
-
-<form id="add-comment" post-id="{{blogpost.id}}" action="submit">
-    <div class="form-group">
-        <div class="new-comment">
-            <label>Add a Comment: </label>
+    <form id="add-comment" post-id="{{blogpost.id}}" action="submit">
+        <div class="form-group">
+            <div class="new-comment">
+                <label>Add a Comment: </label>
+            </div>
             <textarea id="comment-description"></textarea>
         </div>
-    </div>
-    <div class="submit-comment">
-        <button class="btn btn-primary" type="submit">Comment</button>
-    </div>
-</form>
+        <div class="submit-comment">
+            <button class="btn btn-primary" type="submit">Comment</button>
+        </div>
+    </form>
+</div>
+
 
 <script src="/js/addComment.js"></script>

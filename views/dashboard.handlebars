@@ -1,12 +1,19 @@
 <div>
     <h3>Your Dashboard:</h3>
 </div>
-{{#each blogposts}}
-    <a href="/dashboard/{{id}}" class="dashboard-post">
-        <h5>{{title}}</h5>
-        <p>{{format_date createdAt}}</p>
-    </a>
+<div class="blogpost">
+    {{#each blogposts}}
+    <section class="card">
+        <div class="card-header" >
+            <a href="/dashboard/{{id}}" style="color: #ff8800" class="dashboard-post">
+                <h5>{{title}}</h5>
+            </a>
+            <p>{{format_date createdAt}}</p>
+        </div>
+    </section>
 {{/each}}
+</div>
+
 <div class="new-post">
     <a href="/api/userblogpost">
         <button class="btn btn-primary">+ New Post</button>

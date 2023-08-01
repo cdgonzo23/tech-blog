@@ -26,7 +26,6 @@ router.post('/:id', async (req, res) => {
                 user_id: req.session.user_id,
             },
         );
-        console.log('added comment');
         res.status(200).json(newCommentData);
     } catch (err) {
         console.log(err)

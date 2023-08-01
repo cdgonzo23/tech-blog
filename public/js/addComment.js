@@ -1,5 +1,3 @@
-console.log('hello');
-
 const commentFormHandler = async (event) => {
     event.preventDefault();
     const commentDescription = document.querySelector('#comment-description').value;
@@ -16,7 +14,7 @@ const commentFormHandler = async (event) => {
         if (response.ok) {
             location.reload();
         }
-    }
-}
+    };
+};
 
 document.querySelector('#add-comment').addEventListener('submit', commentFormHandler);

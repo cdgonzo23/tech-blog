@@ -1,20 +1,23 @@
 <section class="new-blogpost">
-    <form id="add-blogpost">
-        <h3>Create a Blogpost</h3>
-        <div class="form-group">
-            <div class="new-title">
-                <label>Title: </label>
-                <input type="text" id="blogpost-title"/>
-            </div>
-            <div class="new-description">
-                <label>Description: </label>
+    <div class="new-post-card">
+        <form id="add-blogpost">
+            <h4 style="color: #060606">Create a Blogpost</h4>
+            <div class="form-group">
+                <div class="new-title">
+                    <label>Title: </label>
+                </div>
+                <input style="width: 300px" type="text" id="blogpost-title"/>
+                <div class="new-description">
+                    <label>Description: </label>
+                </div>
                 <textarea id="blogpost-description"></textarea>
             </div>
-        </div>
-        <div class="submit-blogpost">
-            <button class="btn btn-primary" type="submit">Post</button>
-        </div>
-    </form>
+            <div class="submit-blogpost">
+                <button class="btn btn-primary" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+    
 </section>
 
 <script src="/js/addBlogpost.js"></script>

@@ -37,7 +37,9 @@ nav {
     flex-direction: column;
 }
 
-.login-page {
+.login-page,
+.update-blogpost,
+.new-blogpost {
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -69,7 +71,9 @@ nav {
 }
 
 .login-card,
-.signup-card {
+.signup-card,
+.update-card,
+.new-post-card {
     background-color: #ff8800;
     color: #060606;
     padding: 10px;
@@ -108,6 +112,11 @@ h3 {
     margin-left: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+textarea {
+    padding-left: 5px;
+    width: 300px;
 }
 
 .new-post,

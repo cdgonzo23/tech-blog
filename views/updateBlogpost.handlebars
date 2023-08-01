@@ -1,17 +1,25 @@
 <section class="update-blogpost">
-    <form id="update-blogpost" post-id="{{blogpost.id}}" action="submit">
-        <h5>Update a Blogpost</h5>
-        <label>Title</label>
-        <input type="text" id="update-title" value="{{blogpost.title}}"/>
-        <label>Description</label>
-        <textarea id="update-description">{{blogpost.description}}</textarea>
-        <div class="update-btn">
-            <button class="btn btn-primary">Update</button>
+    <div class="update-card">
+        <form id="update-blogpost" post-id="{{blogpost.id}}" action="submit">
+            <h4 style="color: #060606">Update a Blogpost</h4>
+            <div>
+                <label>Title:</label>
+            </div>
+            <input style="width: 300px" type="text" id="update-title" value="{{blogpost.title}}"/>
+            <div style="margin-top: 10px">
+                <label>Description:</label>
+            </div>
+            <textarea id="update-description">{{blogpost.description}}</textarea>
+            <div class="update-btn">
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </form>
+        <p style="margin-top: 17px">--- OR ---</p>
+        <div class="delete-blogpost" >
+            <button id="delete-btn" class="btn btn-primary">Delete</button>
         </div>
-    </form>
-    <div class="delete-blogpost">
-        <button id="delete-btn" class="btn btn-primary">Delete</button>
     </div>
+    
 </section>
 
 <script src="/js/updateBlogpost.js"></script>
