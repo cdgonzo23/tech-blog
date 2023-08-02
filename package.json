@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "preseed": "node config/init seed",
     "seed": "node seeds/index",
     "prewatch": "node config/init",
     "watch": "nodemon server"

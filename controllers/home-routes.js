@@ -23,22 +23,26 @@ router.get('/', async (req, res) => {
 
 // GET FOR EACH POST TO ADD COMMENT AND SEE DESCRIPTION
 router.get("/blogpost/:id", async (req, res) => {
-    try {
-      const blogpostData = await Blogpost.findByPk(req.params.id, { include: [User] });
-      const commentData = await Comments.findAll({ where: { id: req.params.id }, include: [User]});
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+      } else {
+        try {
+          const blogpostData = await Blogpost.findByPk(req.params.id, { include: [User] });
+          const commentData = await Comments.findAll({ where: { id: req.params.id }, include: [User]});
 
-      const blogpost = blogpostData.get({ plain: true});
-      const comments = commentData.map((comment) => comment.get({ plain: true }));
+          const blogpost = blogpostData.get({ plain: true});
+          const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-      res.render("addComment", { 
-        blogpost,
-        comments,
-        loggedIn: req.session.loggedIn,
-    });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json(err);
-    }
+          res.render("addComment", { 
+            blogpost,
+            comments,
+            loggedIn: req.session.loggedIn,
+        });
+        } catch (err) {
+          console.error(err);
+          res.status(500).json(err);
+        }
+      }
 });
 
 
