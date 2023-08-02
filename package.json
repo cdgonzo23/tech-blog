@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "watch": "nodemon server",
-    "postinstall": "node confiog/init.js"
+    "postinstall": "node config/init.js"
   },
   "keywords": [],
   "author": "",
