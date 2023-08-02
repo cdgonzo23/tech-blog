@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -11,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT ?? 3001;
 
 const sess = {
-    secret: '8e89099a-68d8-4a00-beb3-f2189a966bae',
+    secret: process.env.SECRET,
     cookie: {
         maxAge: 300000,
         httpOnly: true,
