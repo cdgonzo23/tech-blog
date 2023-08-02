@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "watch": "nodemon server",
-    "postinstall": "node config/init.js"
+    "watch": "nodemon server"
   },
   "keywords": [],
   "author": "",
